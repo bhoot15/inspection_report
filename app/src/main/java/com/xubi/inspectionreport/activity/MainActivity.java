@@ -12,21 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.xubi.inspectionreport.R;
 import com.xubi.inspectionreport.activity.fragments.MainContainerFragment;
-import com.xubi.inspectionreport.dialog.DateDialog;
-
-import java.util.Calendar;
+import com.xubi.inspectionreport.activity.fragments.QuantityFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private TextView reportDateTv, inspectionDateTv;
-    private Calendar newDate;
-    private String reportDateString, inspectionDateString;
-    private DateDialog dialogFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
