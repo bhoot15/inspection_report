@@ -9,9 +9,15 @@ import android.widget.RadioButton;
 
 import com.xubi.inspectionreport.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class QuantityFragment extends Fragment implements View.OnClickListener {
+
+    @BindView(R.id.radio_yes)
+    RadioButton radioButtonYes;
+    @BindView(R.id.radio_no)
+    RadioButton radioButtonNo;
 
     public QuantityFragment() {
     }
@@ -22,8 +28,13 @@ public class QuantityFragment extends Fragment implements View.OnClickListener {
 
         View v = inflater.inflate(R.layout.fragment_quantity, container, false);
         ButterKnife.bind(this, v);
-        //setOnClickListener();
+        setOnClickListener();
         return v;
+    }
+
+    private void setOnClickListener() {
+        radioButtonYes.setOnClickListener(this);
+        radioButtonNo.setOnClickListener(this);
     }
 
     @Override
