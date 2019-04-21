@@ -1,4 +1,4 @@
-package com.xubi.inspectionreport.activity.fragments;
+package com.xubi.inspectionreport.fragments;
 
 
 import android.app.DatePickerDialog;

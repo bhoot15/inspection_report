@@ -13,4 +13,6 @@
     <string name="menu_product_checks">Product Checks</string>
     <string name="menu_packing">Packing</string>
     <string name="menu_product_marking">Product Marking</string>
+    <string name="menu_home">Inspection Report</string>
+    <string name="menu_inspection_conclusion">Conclusion</string>
 </resources>

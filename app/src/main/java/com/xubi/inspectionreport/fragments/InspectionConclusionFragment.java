@@ -1,4 +1,4 @@
-package com.xubi.inspectionreport.activity.fragments;
+package com.xubi.inspectionreport.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,30 +12,30 @@ import com.xubi.inspectionreport.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class QuantityFragment extends Fragment implements View.OnClickListener {
+public class InspectionConclusionFragment extends Fragment implements View.OnClickListener {
 
-    @BindView(R.id.radio_yes)
+    /*@BindView(R.id.radio_yes)
     RadioButton radioButtonYes;
     @BindView(R.id.radio_no)
-    RadioButton radioButtonNo;
+    RadioButton radioButtonNo;*/
 
-    public QuantityFragment() {
+    public InspectionConclusionFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_quantity, container, false);
+        View v = inflater.inflate(R.layout.fragment_inspection_conclusion, container, false);
         ButterKnife.bind(this, v);
-        setOnClickListener();
+        //setOnClickListener();
         return v;
     }
 
-    private void setOnClickListener() {
+    /*private void setOnClickListener() {
         radioButtonYes.setOnClickListener(this);
         radioButtonNo.setOnClickListener(this);
-    }
+    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,14 +49,14 @@ public class QuantityFragment extends Fragment implements View.OnClickListener {
 
         // Check which radio button was clicked
         switch (view.getId()) {
-            case R.id.radio_yes:
+            /*case R.id.radio_yes:
                 if (checked)
                     // Pirates are the best
                     break;
             case R.id.radio_no:
                 if (checked)
                     // Ninjas rule
-                    break;
+                    break;*/
         }
     }
 }

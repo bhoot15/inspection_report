@@ -5,9 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_home" />
+        <item
             android:id="@+id/nav_quantity"
             android:icon="@drawable/ic_quantity"
             android:title="@string/menu_quantity" />
+        <item
+            android:id="@+id/nav_inspection_conclusion"
+            android:icon="@drawable/ic_quantity"
+            android:title="@string/menu_inspection_conclusion" />
         <item
             android:id="@+id/nav_conclusion"
             android:icon="@drawable/ic_menu_gallery"

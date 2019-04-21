@@ -14,11 +14,14 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.xubi.inspectionreport.R;
-import com.xubi.inspectionreport.activity.fragments.MainContainerFragment;
-import com.xubi.inspectionreport.activity.fragments.QuantityFragment;
+import com.xubi.inspectionreport.fragments.InspectionConclusionFragment;
+import com.xubi.inspectionreport.fragments.MainContainerFragment;
+import com.xubi.inspectionreport.fragments.QuantityFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +54,25 @@ public class MainActivity extends AppCompatActivity
     private void goToMainContainerFragment() {
         MainContainerFragment mainContainerFragment = new MainContainerFragment();
         // Add Fragment to FrameLayout (flContainer), using FragmentManager
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();// begin  FragmentTransaction
-        ft.add(R.id.flContainer, mainContainerFragment);                                // add    Fragment
-        ft.commit();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();// begin  FragmentTransaction
+        fragmentTransaction.replace(R.id.flContainer, mainContainerFragment);                                // add    Fragment
+        fragmentTransaction.commit();
     }
 
     private void goToQuantityFragment() {
         QuantityFragment quantityFragment = new QuantityFragment();
         // Add Fragment to FrameLayout (flContainer), using FragmentManager
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();// begin  FragmentTransaction
-        ft.replace(R.id.flContainer, quantityFragment);                                // add    Fragment
-        ft.commit();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();// begin  FragmentTransaction
+        fragmentTransaction.replace(R.id.flContainer, quantityFragment);                                // add    Fragment
+        fragmentTransaction.commit();
+    }
+
+    private void goToInspectionConclusionFragment() {
+        InspectionConclusionFragment inspectionConclusionFragment = new InspectionConclusionFragment();
+        // Add Fragment to FrameLayout (flContainer), using FragmentManager
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();// begin  FragmentTransaction
+        fragmentTransaction.replace(R.id.flContainer, inspectionConclusionFragment);                                // add    Fragment
+        fragmentTransaction.commit();
     }
 
 
@@ -81,9 +92,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_quantity) {
+        if (id == R.id.nav_home) {
+            goToMainContainerFragment();
+        } else if (id == R.id.nav_quantity) {
             // Handle the camera action
             goToQuantityFragment();
+        } else if (id == R.id.nav_inspection_conclusion) {
+            // Handle the camera action
+            goToInspectionConclusionFragment();
         } else if (id == R.id.nav_conclusion) {
 
         } else if (id == R.id.nav_slideshow) {
